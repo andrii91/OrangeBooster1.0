@@ -220,8 +220,8 @@ $(document).ready(function () {
         setTimeout(function () {
           $('.load').remove();
           $('#pass').remove();
-          $('.life-point').show(200)
-          $('.frame-alert').show(200)
+          $('.life-point').show()
+          $('.frame-alert').show()
 
 
           $(document).keydown(function (e) {
@@ -287,7 +287,7 @@ $(document).ready(function () {
 
         setTimeout(function () {
           $('.frame-alert').hide()
-          $('#btn').show(200).addClass('show');
+          $('#btn').show().addClass('show');
           $('.frame-display').css({
             'overflow': 'visible'
           })
