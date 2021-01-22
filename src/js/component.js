@@ -1,5 +1,20 @@
 $(document).ready(function () {
 
+  $(window).resize(function () {
+    if ($(window).width() < 1200) {
+      $('body').append('<div class="mobile">Please login from your computer</div>')
+    } else {
+      $('.mobile').remove();
+    }
+  })
+
+
+  if ($(window).width() < 1200) {
+    $('body').append('<div class="mobile">Please login from your computer</div>')
+  } else {
+    $('.mobile').remove();
+  }
+
   var audio = {};
 
   function startAudio(url) {
@@ -9,14 +24,14 @@ $(document).ready(function () {
     audio.play();
     audio.loop = true;
   }
-var countHover = 0;
-  $('body').hover(function(){
+  var countHover = 0;
+  $('body').hover(function () {
     console.log(countHover);
-    if(countHover == 0) {
+    if (countHover == 0) {
       countHover++;
       startAudio('audio/a2.mp3');
     }
-    
+
   })
 
   var instance2
@@ -279,8 +294,5 @@ var countHover = 0;
     }
   });
 
-  if($(window).width() < 1200) {
-    $('body').append('<div class="mobile>Please login from your computer</div>')
-  }
 
-}); 
+});
