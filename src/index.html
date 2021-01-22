@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content=" width=device-width">
+  <meta name="Title" content="Orange Booster 1.0" />
+  <meta name="description" content="" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:sitename" content="" />
+  <meta property="og:title" content="Orange Booster 1.0">
+  <meta property="og:image" content="" />
+  <title>Orange Booster 1.0</title>
+  <link type="text/css" rel="stylesheet" href="css/app.css" />
+  <link rel="shortcut icon" href="images/favicon.png">
+  <bgsound src="audio/a2.mp3" /> 
+  
+</head>
+
+<body>
+  <header class="head">
+    <div class="life-point"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M44.3983 0H29.7139V7.42848H22.1131V0H7.42873V7.42848H0V29.7142H7.42873V37.143H14.6846V44.3988H21.7676V51.9999H29.8872V44.3988H37.1431V37.143H44.3989V29.7142H52.0001V7.42848H44.3983V0Z" fill="#FFF500"/></svg> <span>42</span></div>
+    <div class="container">
+      <h1 class="head-title">Orange <span>Booster</span> 1.0</h1>
+      <div class="head-frame">
+        <div class="frame-display">
+          <div id="content">
+              <div class="content"></div>
+          </div>
+          <input type="password" id="pass" class="pass" name="password" />
+          
+          <div class="frame-alert">
+            <p>Hello, Denis!</p> 
+            <p>You have <span>42</span> points left.</p>
+          </div>
+          
+          <div class="frame-item" id="btn">
+            <div class="top">
+              <div>Hello, Denis! </div>
+              <div>Please describe the problem:</div>
+            </div>
+            <div class="content-item">
+              <ul class="frame-btn" id="frame-btn">
+                <li class="active" data-point="+1" data-open="#open1">
+                  <div class="title"><span>I</span> am happy!</div>
+                  <div class="point-info">+1 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.2224 0H10.857V2.71423H8.07977V0H2.71433V2.71423H0V10.8571H2.71433V13.5714H5.3655V16.2225H7.95352V18.9999H10.9203V16.2225H13.5715V13.5714H16.2226V10.8571H19V2.71423H16.2224V0Z" fill="white"/></svg></div>
+                </li>
+                <li  data-point="-1" data-open="#open2">
+                  <div class="title">I need <span>H</span>elp!</div>
+                  <div class="point-info">-1 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.2224 0H10.857V2.71423H8.07977V0H2.71433V2.71423H0V10.8571H2.71433V13.5714H5.3655V16.2225H7.95352V18.9999H10.9203V16.2225H13.5715V13.5714H16.2226V10.8571H19V2.71423H16.2224V0Z" fill="white"/></svg></div>
+                </li>
+                <li  data-point="-5" data-open="#open3">
+                  <div class="title"><span>V</span>syo propalo!!!</div>
+                  <div class="point-info">-5 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.2224 0H10.857V2.71423H8.07977V0H2.71433V2.71423H0V10.8571H2.71433V13.5714H5.3655V16.2225H7.95352V18.9999H10.9203V16.2225H13.5715V13.5714H16.2226V10.8571H19V2.71423H16.2224V0Z" fill="white"/></svg></div>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          
+          
+          <div class="frame-item" id="confirmation">
+            <div class="top">
+                Are you sure?!
+            </div>
+            <div class="content-item">
+              <ul class="frame-btn" id="confirm-btn">
+                <li class="active" id="next" data-open="#open1">
+                  <div class="title"><span>Y</span>es</div>
+                </li>
+                <li  id="back" data-open="#back">
+                  <div class="title"><span>N</span>o</div>
+                </li>
+               
+              </ul>
+            </div>
+          </div>
+          
+          <div class="result-item" id="open1">
+            <p>C:\OrangeBooster.bat <br>COMMAND:I am happy! <br>RESULT:</p>
+
+            <p class="yellow">ZAKAZHI SEGODNYA PIZZA NA VSEH!</p>
+
+            <p>------------------------------<br>
+            <span>ORANGE BOOSTER</span> IS ALREADY USED TODAY. PLEASE RETURN TOMORROW!</p>
+          </div>
+          
+          <div class="result-item" id="open2">
+            <p>C:\OrangeBooster.bat <br>COMMAND:I need Help! <br>RESULT:</p>
+
+            <p class="yellow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+
+            <p>------------------------------<br>
+            <span>ORANGE BOOSTER</span> IS ALREADY USED TODAY. PLEASE RETURN TOMORROW!</p>
+          </div>
+          
+          <div class="result-item" id="open3">
+            <p>C:\OrangeBooster.bat <br>COMMAND: Vsyo propalo! <br>RESULT:</p>
+
+            <p class="yellow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+
+            <p>------------------------------<br>
+            <span>ORANGE BOOSTER</span> IS ALREADY USED TODAY. PLEASE RETURN TOMORROW!</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </header>
+
+  <script defer src="js/vendor.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+
+  <script defer src="js/app.js"></script>
+</body>
+
+</html>

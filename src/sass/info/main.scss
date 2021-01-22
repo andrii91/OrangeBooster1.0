@@ -1,0 +1,343 @@
+@import 'variables';
+
+* {
+  outline: none;
+}
+
+a:focus,
+a:hover,
+input:focus,
+input:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  @import 'MediaQueries/main';
+  overflow-x: hidden;
+}
+
+.head {
+  min-height: 100vh;
+  position: relative;
+  background: url('../images/hbg.jpg') no-repeat center;
+  background-size: cover;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  .container {
+    position: relative;
+  }
+}
+
+[data-typeit-id]:before {
+  position: absolute;
+}
+
+.head-frame {
+  background: url('../images/fr.png') no-repeat center;
+  width: 100%;
+  height: vw(1120px);
+  background-size: 100%;
+  position: relative;
+}
+
+.head-title {
+  margin-bottom: vw(179px);
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: vw(96px);
+  line-height: 1;
+  color: #FB1CAC;
+
+  &.boom {
+    font-style: normal;
+    font-weight: normal;
+    font-size: vw(100px);
+    color: #FFF500;
+  }
+
+  span {
+    background: #FFF500;
+    color: #00EDFF;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate__zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+.animate__animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: var(--animate-duration);
+  animation-duration: var(--animate-duration);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: url('../images/hbg.jpg') no-repeat center;
+  background-size: cover;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 46px;
+  line-height: 1;
+  color: #FB1CAC;
+  justify-content: center;
+}
+
+.frame-display {
+  width: vw(480px);
+  height: vw(395px);
+  position: absolute;
+  top: vw(200px);
+  left: 49%;
+  transform: translateX(-50%);
+  //  background: #fff;
+  overflow: hidden;
+
+  .content {
+    font-family: 'Perfect DOS VGA 437';
+    font-style: normal;
+    font-weight: normal;
+    font-size: vw(26px);
+    line-height: 220%;
+    color: #00EDFF;
+  }
+
+  .load {
+    transition: 5s;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.pass {
+  background: 0 0;
+  border: 0;
+  width: 100%;
+  display: block;
+  font-family: 'Perfect DOS VGA 437';
+  font-style: normal;
+  font-weight: normal;
+  font-size: vw(26px);
+  line-height: 220%;
+  color: #00EDFF !important;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.life-point {
+  position: absolute;
+  top: vw(95px);
+  right: vw(210px);
+  display: none;
+
+  svg {
+    width: vw(52px);
+    height: vw(52px);
+    margin-right: vw(18px);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: vw(62px);
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    color: #FFF500;
+  }
+}
+
+.frame-alert {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top: vw(17px) solid #FB1CAC;
+  background: rgba(255, 255, 255, .9);
+  padding: vw(20px) vw(22px);
+  font-style: normal;
+  font-weight: normal;
+  font-size: vw(28px);
+  line-height: 1.2;
+  width: vw(422px);
+  color: #000000;
+
+  p {
+    margin: 0;
+  }
+}
+
+.frame-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: vw(532px);
+  display: none;
+
+  .top {
+    border-top: vw(17px) solid #FB1CAC;
+    padding: vw(20px) vw(22px);
+    font-style: normal;
+    font-weight: normal;
+    font-size: vw(28px);
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: vw(4px);
+    background: #FFF500;
+
+    div {
+      font-size: vw(28px);
+      line-height: 1.2;
+    }
+
+  }
+
+  .content-item {
+    background: #0f8a94;
+    padding: vw(34px) vw(30px);
+
+  }
+}
+
+.frame-btn {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: normal;
+    font-size: vw(28px);
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: vw(15px);
+    padding: vw(10px) vw(19px) vw(10px) vw(16px);
+    position: relative;
+
+    span {
+      color: #00EDFF;
+    }
+
+    &.active {
+      background: #0001B1;
+
+      &:before {
+        content: "";
+        background: url('../images/point.svg') no-repeat center;
+        background-size: 100%;
+        width: vw(10.48px);
+        height: vw(19px);
+        position: absolute;
+        top: 50%;
+        left: vw(-20px);
+        transform: translateY(-50%);
+
+      }
+    }
+
+    .point-info {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      width: vw(19px);
+      height: vw(19px);
+      margin-left: vw(11px);
+    }
+  }
+}
+
+#confirmation {
+  max-width: vw(287px);
+}
+
+.result-item {
+  display: none;
+  position: absolute;
+  width: vw(476px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-style: normal;
+  font-weight: normal;
+  font-size: vw(28px);
+  line-height: 1.2;
+  color: #00EDFF;
+
+  .yellow {
+    color: #FFF500;
+  }
+
+  p {
+    span {
+      color: #FB1CAC;
+    }
+  }
+}
