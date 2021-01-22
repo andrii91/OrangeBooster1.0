@@ -24,6 +24,7 @@ $(document).ready(function () {
     audio.play();
     audio.loop = true;
   }
+/*
   var countHover = 0;
   $('body').hover(function () {
     console.log(countHover);
@@ -33,6 +34,7 @@ $(document).ready(function () {
     }
 
   })
+*/
 
   var instance2
   var instance = new TypeIt(".content", {
@@ -64,6 +66,15 @@ $(document).ready(function () {
     })
     .type("Programmers Test")
     .type("...........", {
+      speed: 200
+    })
+    .type("PASS")
+
+    .break({
+      delay: 500
+    })
+    .type("Managers Test")
+    .type("..............", {
       speed: 200
     })
     .type("PASS")
@@ -269,7 +280,7 @@ $(document).ready(function () {
           });
 
 
-          audio.pause();
+//          audio.pause();
           startAudio('audio/a1.mp3');
 
         }, 4000)
