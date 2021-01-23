@@ -67,6 +67,8 @@ body {
     color: #00EDFF;
     padding-left: 12px;
     padding-right: 12px;
+    padding-top: 8px;
+        padding-bottom: 4px;
   }
 
 }
@@ -142,7 +144,7 @@ body {
     font-style: normal;
     font-weight: normal;
     font-size: vw(26px);
-    line-height: 220%;
+    line-height: 1.2;
     color: #00EDFF;
   }
 
@@ -342,4 +344,7 @@ body {
       color: #FB1CAC;
     }
   }
+}
+#error {
+  max-width: vw(324px);
 }

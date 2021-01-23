@@ -24,17 +24,17 @@ $(document).ready(function () {
     audio.play();
     audio.loop = true;
   }
-/*
-  var countHover = 0;
-  $('body').hover(function () {
-    console.log(countHover);
-    if (countHover == 0) {
-      countHover++;
-      startAudio('audio/a2.mp3');
-    }
+  /*
+    var countHover = 0;
+    $('body').hover(function () {
+      console.log(countHover);
+      if (countHover == 0) {
+        countHover++;
+        startAudio('audio/a2.mp3');
+      }
 
-  })
-*/
+    })
+  */
 
   var instance2
   var instance = new TypeIt(".content", {
@@ -149,48 +149,64 @@ $(document).ready(function () {
     var pointPress = 0;
 
     if ($('#btn').hasClass('show')) {
-      $('.frame-item').hide();
-      $('#btn').removeClass('show')
-      $('#confirmation').show().addClass('show');
-      $('#next').attr('data-open', $("#frame-btn li.active").data('open'));
-      pointPress = 1;
+      
+      if (Number($('.life-point span').text()) < 1 && $("#frame-btn li.active").data('open') != '#open1') {
+        $('.frame-item').hide();
+        $('#btn').removeClass('show')
+        $('#error').show().addClass('show');
+        pointPress = 1;
+        
+      } else {
+        $('.frame-item').hide();
+        $('#btn').removeClass('show')
+        $('#confirmation').show().addClass('show');
+        $('#next').attr('data-open', $("#frame-btn li.active").data('open'));
+        pointPress = 1;
+      }
+        
     }
 
     if ($('.show #next').hasClass('active') && pointPress == 0) {
-      console.log('pointPress', pointPress);
-      $('#content').show();
-      $('#confirmation').removeClass('show').hide();
 
-      instance = new TypeIt(".content", {
-          speed: 10,
-          cursorChar: '_',
-          deleteSpeed: '0',
-          html: true,
-          cursor: false,
-          waitUntilVisible: true,
-          afterComplete: function (step, instance) {
+      
+        $('#content').show();
+        $('#confirmation').removeClass('show').hide();
 
-            $('.content').text(' ');
-            $('#content').hide();
-            $('' + $('#next').data('open')).show();
+        instance = new TypeIt(".content", {
+            speed: 10,
+            cursorChar: '_',
+            deleteSpeed: '0',
+            html: true,
+            cursor: false,
+            waitUntilVisible: true,
+            afterComplete: function (step, instance) {
 
-            $('.head-title').addClass('boom animate__animated animate__zoomIn').text('Booo-o-om!!!!')
+              $('.content').text(' ');
+              $('#content').hide();
+              $('' + $('#next').data('open')).show();
 
-          }
-        })
-        .type("C:/\OrangeBooster.bat")
-        .break({
-          delay: 500
-        })
-        .type("Calculating")
-        .type(".....................", {
-          speed: 200
-        })
-        .go();
+              $('.head-title').addClass('boom animate__animated animate__zoomIn').text('Booo-o-om!!!!')
+
+            }
+          })
+          .type("C:/\OrangeBooster.bat")
+          .break({
+            delay: 500
+          })
+          .type("Calculating")
+          .type(".....................", {
+            speed: 200
+          })
+          .go();
     }
 
     if ($('.show #back').hasClass('active') && pointPress == 0) {
       $('#confirmation').removeClass('show').hide();
+      $('#btn').addClass('show').show();
+    }
+
+    if ($('.show #back1').hasClass('active') && pointPress == 0) {
+      $('#error').removeClass('show').hide();
       $('#btn').addClass('show').show();
     }
 
@@ -280,7 +296,7 @@ $(document).ready(function () {
           });
 
 
-//          audio.pause();
+          //          audio.pause();
           startAudio('audio/a1.mp3');
 
         }, 4000)
@@ -304,6 +320,8 @@ $(document).ready(function () {
 
     }
   });
+
+
 
 
 });
